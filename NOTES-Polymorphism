@@ -1,0 +1,30 @@
+Polymorphism in Python refers to the ability of objects to take on multiple forms or to be used in different ways. In Python, polymorphism is often achieved through method overriding and method overloading.
+
+Method overriding is when a subclass provides its own implementation for a method that is already defined in its parent class. This allows the subclass to provide a more specific or specialized behavior for that method.
+
+Method overloading is when a class provides multiple methods with the same name, but different parameters. This allows the class to handle different types of input in different ways.
+
+Here's an example of polymorphism in Python using method overriding:
+class Animal:
+    def make_sound(self):
+        pass
+
+class Dog(Animal):
+    def make_sound(self):
+        print("Bark")
+
+class Cat(Animal):
+    def make_sound(self):
+        print("Meow")
+
+def animal_sounds(animal):
+    animal.make_sound()
+
+dog = Dog()
+cat = Cat()
+
+animal_sounds(dog)  # prints "Bark"
+animal_sounds(cat)  # prints "Meow"
+In this example, we have a base class Animal with a make_sound method that doesn't do anything. We then define two subclasses, Dog and Cat, which override the make_sound method with their own implementations. Finally, we have a function animal_sounds that takes an Animal object and calls its make_sound method. When we pass in a Dog or Cat object, the make_sound method is called with the appropriate behavior for that subclass.
+
+Overall, polymorphism in Python allows for more flexible and reusable code, as objects can be used in different contexts and with different behaviors.
