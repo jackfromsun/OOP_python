@@ -1,0 +1,32 @@
+Encapsulation in Python refers to the practice of hiding the implementation details of a class from the outside world and providing a public interface for interacting with the class. This is often achieved through the use of access modifiers, such as public, private, and protected attributes and methods.
+
+In Python, there are no built-in access modifiers like in other programming languages, but there are conventions for indicating the intended level of visibility. By convention, attributes and methods that are intended to be private should be prefixed with a double underscore (__), which causes Python to mangle the name of the attribute or method, making it harder to access from outside the class. Protected attributes and methods can be prefixed with a single underscore (_), which indicates that they are intended to be used only within the class and its subclasses.
+
+Here's an example of encapsulation in Python:
+class Person:
+    def __init__(self, name, age):
+        self.__name = name  # private attribute
+        self._age = age  # protected attribute
+
+    def get_name(self):
+        return self.__name
+
+    def set_name(self, name):
+        self.__name = name
+
+    def get_age(self):
+        return self._age
+
+    def set_age(self, age):
+        self._age = age
+
+person = Person("Alice", 25)
+print(person.get_name())  # prints "Alice"
+person.set_name("Bob")
+print(person.get_name())  # prints "Bob"
+print(person.get_age())  # prints 25
+person.set_age(30)
+print(person.get_age())  # prints 30
+In this example, we have a Person class with a private __name attribute and a protected _age attribute. We also have public get and set methods for both attributes. By using these methods, we can interact with the attributes of the class without directly accessing them from outside the class.
+
+Overall, encapsulation in Python helps to create more secure and maintainable code by limiting the ways in which external code can interact with the internal state of a class.
