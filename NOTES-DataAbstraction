@@ -1,0 +1,23 @@
+Data abstraction in Python refers to the concept of representing complex data types or structures in a simplified and abstracted way, by exposing only the essential details and hiding the implementation details from the user. This is typically achieved through the use of abstract data types, which are high-level descriptions of data structures and operations that can be performed on them.
+
+In Python, data abstraction is often achieved through the use of classes and objects, which can encapsulate data and behavior within a single entity. By defining a class, you can define the attributes and methods that make up the object, and you can use these attributes and methods to interact with the object without knowing the details of how they are implemented.
+
+Here's an example of data abstraction in Python:
+class BankAccount:
+    def __init__(self, balance=0):
+        self._balance = balance
+
+    def deposit(self, amount):
+        self._balance += amount
+
+    def withdraw(self, amount):
+        if self._balance >= amount:
+            self._balance -= amount
+        else:
+            print("Insufficient funds")
+
+    def get_balance(self):
+        return self._
+In this example, we have a BankAccount class with an __init__ method that takes a balance parameter, as well as deposit, withdraw, and get_balance methods. The balance attribute is protected by a single underscore prefix convention. The methods can be used to deposit and withdraw money from the account, as well as to get the current balance of the account. By using the methods provided by the BankAccount class, we can interact with the object in a simple and abstracted way, without knowing the implementation details of the class.
+
+Overall, data abstraction in Python helps to simplify complex data structures and operations, making it easier to use and maintain code, and reducing the risk of errors and bugs caused by unexpected behavior.
