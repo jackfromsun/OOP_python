@@ -1,0 +1,30 @@
+Inheritance in Python refers to the ability of a new class to be based on an existing class, inheriting the attributes and methods of the existing class and allowing for the creation of more specialized classes. The existing class is known as the parent class or superclass, while the new class is known as the child class or subclass.
+
+To create a subclass in Python, you use the class keyword followed by the name of the subclass and the name of the parent class in parentheses. You can then define additional attributes and methods specific to the subclass.
+
+Here's an example of inheritance in Python:
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        pass
+
+class Dog(Animal):
+    def speak(self):
+        return "Woof!"
+
+class Cat(Animal):
+    def speak(self):
+        return "Meow!"
+
+dog = Dog("Fido")
+cat = Cat("Fluffy")
+
+print(dog.name)  # prints "Fido"
+print(dog.speak())  # prints "Woof!"
+print(cat.name)  # prints "Fluffy"
+print(cat.speak())  # prints "Meow!"
+In this example, we have a Animal class with an __init__ method that takes a name parameter and a speak method that doesn't do anything. We then define two subclasses, Dog and Cat, which override the speak method with their own implementations. Finally, we create instances of the Dog and Cat classes and call their name and speak methods, demonstrating how the child classes inherit and extend the behavior of the parent class.
+
+Overall, inheritance in Python allows for the creation of more specialized classes that can reuse and extend the behavior of existing classes, leading to more flexible and maintainable code.
